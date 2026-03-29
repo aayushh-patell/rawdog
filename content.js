@@ -28,6 +28,18 @@
     return;
   }
 
+  function playSadTrombone() {
+    if (window.top !== window) {
+      return;
+    }
+
+    const audio = new Audio(chrome.runtime.getURL("assets/sounds/sad-trombone.mp3"));
+    audio.volume = 0.35;
+    audio.play().catch(() => {
+      // Autoplay is best-effort here; the strip still runs even if audio is blocked.
+    });
+  }
+
   function stripAttributes(element) {
     for (const name of PRESENTATIONAL_ATTRIBUTES) {
       if (element.hasAttribute(name)) {
@@ -118,6 +130,7 @@
     attributeFilter: ["style", "rel", "bgcolor", "color", "face", "size", "align", "width", "height", "background"]
   });
 
+  playSadTrombone();
   sanitizeDocument();
 
   document.addEventListener("readystatechange", sanitizeDocument, { passive: true });
