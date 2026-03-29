@@ -1,4 +1,4 @@
-(function () {
+(async function () {
   const PRESENTATIONAL_ATTRIBUTES = [
     "style",
     "bgcolor",
@@ -22,6 +22,11 @@
   ]);
 
   const processed = new WeakSet();
+  const items = await chrome.storage.sync.get({ enabled: true });
+
+  if (!items.enabled) {
+    return;
+  }
 
   function stripAttributes(element) {
     for (const name of PRESENTATIONAL_ATTRIBUTES) {
