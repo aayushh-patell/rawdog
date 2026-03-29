@@ -7,6 +7,7 @@
   <body>
     <h1>Raw.dog</h1>
     <p>the web. naked.</p>
+    <p id="shame-score">Shame score: calculating...</p>
     <form action="https://www.google.com/search" method="get">
       <label for="q">Search the heap:</label>
       <input id="q" name="q" type="text" autocomplete="off">
@@ -14,12 +15,13 @@
     </form>
     <h2>Hall of Shame</h2>
     <ul>
-      <li><a href="https://twitter.com/">Twitter</a></li>
-      <li><a href="https://www.apple.com/">Apple.com</a></li>
-      <li><a href="https://stripe.com/">Stripe</a></li>
-      <li><a href="https://linear.app/">Linear</a></li>
-      <li><a href="https://www.notion.so/">Notion</a></li>
-      <li><a href="https://www.airbnb.com/">Airbnb</a></li>
+      <li data-shame="100"><a href="https://twitter.com/">Twitter</a></li>
+      <li data-shame="85"><a href="https://www.apple.com/">Apple.com</a></li>
+      <li data-shame="90"><a href="https://stripe.com/">Stripe</a></li>
+      <li data-shame="88"><a href="https://linear.app/">Linear</a></li>
+      <li data-shame="92"><a href="https://www.notion.so/">Notion</a></li>
+      <li data-shame="95"><a href="https://www.airbnb.com/">Airbnb</a></li>
     </ul>
+    <script src="newtab.js"></script>
   </body>
 </html>
